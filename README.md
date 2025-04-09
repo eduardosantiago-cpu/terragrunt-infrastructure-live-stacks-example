@@ -12,7 +12,7 @@
 >
 > For more information on how to work with experimental features, see the [Experiments documentation](https://terragrunt.gruntwork.io/docs/reference/experiments).
 
-This repository, along with the [terragrunt-infrastructure-catalog-example repo](https://github.com/gruntwork-io/terragrunt-infrastructure-catalog-example),
+This repository, along with the [terragrunt-infrastructure-catalog-example repository](https://github.com/gruntwork-io/terragrunt-infrastructure-catalog-example),
 offers a best practice system for organizing your Infrastructure as Code (IaC) so that you can maintain your IaC at any
 scale with confidence using an `infrastructure-live` repository.
 
@@ -95,7 +95,7 @@ This repository contains the following:
   - Security Groups (SGs)
   - MySQL Database (DB)
 
-  The configurations for these resources aren't defined in this repository, but are instead defined in the [terragrunt-infrastructure-modules-example](https://github.com/gruntwork-io/terragrunt-infrastructure-modules-example) repo.
+  The configurations for these resources aren't defined in this repository, but are instead defined in the [terragrunt-infrastructure-catalog-example](https://github.com/gruntwork-io/terragrunt-infrastructure-catalog-example) repository.
 
   This is a recommended, Gruntwork best practice, as it allows infrastructure teams to iterate on infrastructure patterns as versioned, immutable artifacts, and then reference pinned versions of these patterns in their "live" infrastructure-live repositories.
 
@@ -276,9 +276,9 @@ account
 Where:
 
 - **Account-level `_global`**: Contains resources that are available across all regions in the account, such as IAM users, Route 53 hosted zones, and CloudTrail.
-- **Region-level `_global`**: Contains resources that are available across all environments in a region, such as Route 53 A records, SNS topics, and ECR repos.
+- **Region-level `_global`**: Contains resources that are available across all environments in a region, such as Route 53 A records, SNS topics, and ECR repositories.
 
-The `resources` directory can be arbitrarily deep, and can be used to organize resources under management in a way that makes sense for the team managing the infrastructure. In this repository it's fairly shallow for the sake of simplicity, with the units constituting the stack in the `terragrunt.stack.hcl` files defined in the [terragrunt-infrastructure-modules-example](https://github.com/gruntwork-io/terragrunt-infrastructure-modules-example) repo.
+The `resources` directory can be arbitrarily deep, and can be used to organize resources under management in a way that makes sense for the team managing the infrastructure. In this repository it's fairly shallow for the sake of simplicity, with the units constituting the stack in the `terragrunt.stack.hcl` files defined in the [terragrunt-infrastructure-catalog-example](https://github.com/gruntwork-io/terragrunt-infrastructure-catalog-example) repository.
 
 ## Where to store configuration
 
@@ -307,10 +307,10 @@ For example, take this portion of [prod/us-east-1/stateful-ec2-asg-service/terra
 
 ```hcl
 unit "service" {
-  // You'll typically want to pin this to a particular version of your catalog repo.
+  // You'll typically want to pin this to a particular version of your catalog repository.
   // e.g.
-  // source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-modules-example.git//units/ec2-asg-stateful-service?ref=v0.1.0"
-  source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-modules-example.git//units/ec2-asg-stateful-service"
+  // source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/ec2-asg-stateful-service?ref=v0.1.0"
+  source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/ec2-asg-stateful-service"
 
   path = "service"
 
@@ -349,4 +349,4 @@ They help make sure that your IaC results in reproducible infrastructure. For mo
 
 ## How to get help
 
-If you need help troubleshooting usage of this repo, or Terragrunt in general, check out the [Support docs](https://terragrunt.gruntwork.io/docs/community/support/).
+If you need help troubleshooting usage of this repository, or Terragrunt in general, check out the [Support docs](https://terragrunt.gruntwork.io/docs/community/support/).
