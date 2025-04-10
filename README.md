@@ -2,7 +2,8 @@
 
 # Example infrastructure-live for Terragrunt (with Stacks)
 
-> **Note**: This repository uses experimental features of Terragrunt that are soon to be made generally available. If you are reading this prior to the general availability of the [Stacks](https://terragrunt.gruntwork.io/docs/reference/experiments/#stacks) and [CLI Redesign](https://terragrunt.gruntwork.io/docs/reference/experiments/#cli-redesign) experiments, you will have to opt into usage of these features.
+> [!IMPORTANT]
+> This repository uses experimental features of Terragrunt that are soon to be made generally available. If you are reading this prior to the general availability of the [Stacks](https://terragrunt.gruntwork.io/docs/reference/experiments/#stacks) and [CLI Redesign](https://terragrunt.gruntwork.io/docs/reference/experiments/#cli-redesign) experiments, you will have to opt into usage of these features.
 >
 > The simplest way to opt into these features is to set the `TG_EXPERIMENT_MODE` environment variable to `true`.
 >
@@ -23,17 +24,27 @@ If you have not already done so, you are encouraged to read the [Terragrunt Gett
 An `infrastructure-live` repository is a Gruntwork best practice for managing your "live" infrastructure. That is, the
 infrastructure that is actually provisioned, as opposed to infrastructure patterns that *can* be provisioned.
 
-## Usage
+## Key Features & Benefits
 
-> **Note**: If you have an existing repository that was started using the [terragrunt-infrastructure-live-example](https://github.com/gruntwork-io/terragrunt-infrastructure-live-example) repository as a starting point, follow the [migration guide](/docs/migration-guide.md) for help in adjusting your existing configurations to take advantage of the patterns outlined in this repository.
+This repository provides a practical blueprint for managing infrastructure with Terragrunt, demonstrating:
+
+* **Modern Terragrunt Workflow:** Leverages Terragrunt Stacks for clear dependency management and streamlined multi-component deployments.
+* **Scalable `infrastructure-live` Structure:** Organizes infrastructure logically by account and region, providing a proven foundation adaptable to growing complexity.
+* **Best-Practice Separation:** Clearly separates environment-specific "live" configurations (this repo) from reusable infrastructure patterns (via an `infrastructure-catalog`).
+* **DRY Configuration:** Reduces code duplication using hierarchical configuration files (`root.hcl`, `account.hcl`, `region.hcl`).
+* **Concrete End-to-End Example:** Deploys a sample stateful web application (ASG, ALB, MySQL) across distinct production and non-production environments.
+* **Reproducible Tooling:** Includes `mise` configuration for easy installation of pinned versions of Terragrunt and OpenTofu/Terraform.
+
+## Getting Started
+
+> [!TIP]
+> If you have an existing repository that was started using the [terragrunt-infrastructure-live-example](https://github.com/gruntwork-io/terragrunt-infrastructure-live-example) repository as a starting point, follow the [migration guide](/docs/migration-guide.md) for help in adjusting your existing configurations to take advantage of the patterns outlined in this repository.
 
 To use this repository, you'll want to fork this repository into your own Git organization.
 
 The steps for doing this are the following:
 
 1. Create a new Git repository in your organization (e.g. [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository), [GitLab](https://docs.gitlab.com/user/project/repository/)).
-
-   **Note**: You typically shouldn't have any sensitive information in this repository, as it will only contain generic infrastructure patterns that can be provisioned in any environment, but you might want to have this repository be private regardless.
 
 2. Create a bare clone of this repository somewhere on your local machine.
 
@@ -72,7 +83,8 @@ mise install
 
 ## Repository Contents
 
-> **Note**: This code is solely for demonstration purposes. This is not production-ready code, so use at your own risk. If you are interested in battle-tested, production-ready Terragrunt and OpenTofu/Terraform code, continuously updated and maintained by a team of subject matter experts, consider purchasing a subscription to the [Gruntwork IaC Library](https://www.gruntwork.io/platform/iac-library).
+> [!NOTE]
+> This code is solely for demonstration purposes. This is not production-ready code, so use at your own risk. If you are interested in battle-tested, production-ready Terragrunt and OpenTofu/Terraform code, continuously updated and maintained by a team of subject matter experts, consider purchasing a subscription to the [Gruntwork IaC Library](https://www.gruntwork.io/platform/iac-library).
 
 This repository contains the following:
 
@@ -140,7 +152,8 @@ Before you start provisioning the infrastructure in this repository, you'll want
 
 2. Update the `account_name` and `aws_account_id` parameters in [`non-prod/account.hcl`](/non-prod/account.hcl) and [`prod/account.hcl`](/prod/account.hcl) with the names and IDs of accounts you want to use for non production and production workloads, respectively.
 
-   **Note**: If you want everything deployed in a single AWS account, you can just use different values for the `account_name` parameter, and keep the `aws_account_id` parameter the same.
+   > [!TIP]
+   > If you want everything deployed in a single AWS account, you can just use different values for the `account_name` parameter, and keep the `aws_account_id` parameter the same.
 
 3. Configure your local AWS credentials using one of the supported [authentication mechanisms](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
 

@@ -10,6 +10,17 @@ How much of it do you regularly update? Does any of it result in frustration or 
 
 Determine whether it's a good time to be migrating your infrastructure to new patterns, and if so, how much of it you're willing to migrate. If you are happy, and successful with your current patterns, you may not need to migrate any existing configuration, and that's great! Consider this a best practice that you can adopt when you start to introduce new infrastructure, and that you may want to adjust your existing infrastructure configurations over time to take advantage of new patterns.
 
+The advantages of using the new paradigm with Terragrunt Stacks are:
+
+- You can more easily manage your infrastructure at scale.
+- You can more easily manage your infrastructure in different environments.
+- You can more easily manage your infrastructure across multiple accounts and regions.
+- You can more easily manage your infrastructure across multiple teams and organizations.
+
+We, at Gruntwork, generally consider this paradigm to be the best practice for managing Infrastructure as Code (IaC) at scale, which is why we've created this migration guide to help you transition to it.
+
+If you get overwhelmed at any point, read the [Support docs](https://terragrunt.gruntwork.io/docs/community/support/) to learn how you can get help.
+
 ## Step 2: Update your Terragrunt version
 
 Now that you've determined that you want to migrate some or all of your infrastructure to new patterns, the next step is to ensure that you have a version of Terragrunt that supports the `terragrunt.stack.hcl` file.
