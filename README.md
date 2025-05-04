@@ -2,17 +2,6 @@
 
 # Example infrastructure-live for Terragrunt (with Stacks)
 
-> [!IMPORTANT]
-> This repository uses experimental features of Terragrunt that are soon to be made generally available. If you are reading this prior to the general availability of the [Stacks](https://terragrunt.gruntwork.io/docs/reference/experiments/#stacks) and [CLI Redesign](https://terragrunt.gruntwork.io/docs/reference/experiments/#cli-redesign) experiments, you will have to opt into usage of these features.
->
-> The simplest way to opt into these features is to set the `TG_EXPERIMENT_MODE` environment variable to `true`.
->
-> ```bash
-> export TG_EXPERIMENT_MODE=true
-> ```
->
-> For more information on how to work with experimental features, see the [Experiments documentation](https://terragrunt.gruntwork.io/docs/reference/experiments).
-
 This repository, along with the [terragrunt-infrastructure-catalog-example repository](https://github.com/gruntwork-io/terragrunt-infrastructure-catalog-example),
 offers a best practice system for organizing your Infrastructure as Code (IaC) so that you can maintain your IaC at any
 scale with confidence using an `infrastructure-live` repository.
