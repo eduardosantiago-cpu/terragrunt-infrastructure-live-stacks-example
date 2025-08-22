@@ -11,7 +11,7 @@ unit "service" {
   // You'll typically want to pin this to a particular version of your catalog repo.
   // e.g.
   // source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/ec2-asg-stateful-service?ref=v0.1.0"
-  source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/ec2-asg-stateful-service"
+  source = "git::git@github.com:eduardosantiago-cpu/terragrunt-infrastructure-catalog-example.git//units/ec2-asg-stateful-service"
 
   path = "service"
 
