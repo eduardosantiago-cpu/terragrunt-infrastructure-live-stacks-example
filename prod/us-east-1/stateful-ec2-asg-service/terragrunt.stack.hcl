@@ -41,7 +41,7 @@ unit "db" {
   // You'll typically want to pin this to a particular version of your catalog repo.
   // e.g.
   // source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/mysql?ref=v0.1.0"
-  source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/mysql"
+  source = "git::git@github.com:eduardosantiago-cpu/terragrunt-infrastructure-catalog-example.git//units/mysql"
 
   path = "db"
 
@@ -70,7 +70,7 @@ unit "asg_sg" {
   // You'll typically want to pin this to a particular version of your catalog repo.
   // e.g.
   // source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/sg?ref=v0.1.0"
-  source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/sg"
+  source = "git::git@github.com:eduardosantiago-cpu/terragrunt-infrastructure-catalog-example.git//units/sg"
 
   path = "sgs/asg"
 
@@ -87,7 +87,7 @@ unit "sg_to_db_sg_rule" {
   // You'll typically want to pin this to a particular version of your catalog repo.
   // e.g.
   // source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/sg-to-db-sg-rule?ref=v0.1.0"
-  source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-catalog-example.git//units/sg-to-db-sg-rule"
+  source = "git::git@github.com:eduardosantiago-cpu/terragrunt-infrastructure-catalog-example.git//units/sg-to-db-sg-rule"
 
   path = "rules/sg-to-db-sg-rule"
 
